@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>A qui le tour ?</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <base href="/OC4FE/app/">
+    <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+<body ng-app="oc4fe">
+
+<md-toolbar ng-controller="toolbarCtrl">
+    <div class="md-toolbar-tools" layout="row" layout-wrap>
+        <md-button class="md-icon-button" aria-label="Icon" flex="10" ng-click="index()">
+            <md-icon md-svg-icon="img/coffee.svg"></md-icon>
+        </md-button>
+        <h2 flex="80">
+            <span class="md-title">OC4FE</span>
+        </h2>
+        <md-button class="md-icon-button" aria-label="Icon" flex="10" ng-click="showGridBottomSheet($event)">
+            <md-icon md-svg-icon="img/dots-vertical.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<div ng-view></div>
+
+</md-content>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<div layout="column" layout-align="space-around center">
+    <form novalidate>
+        <br/>
+        <!--Prenom-->
+        <md-input-container flex>
+            <label>Prenom</label>
+            <input ng-model="prenom">
+        </md-input-container>
+
+        <!--Sucre ou pas ?-->
+        <div layout="row" layout-align="space-between center">
+            <label style="color:rgba(0,0,0,0.26)">Sucre ?</label>
+            <md-switch ng-model="sucre" aria-label="Sucre" class="md-primary"></md-switch>
+        </div>
+
+        <!--Touillette ou pas ?-->
+        <div layout="row" layout-align="space-between center">
+            <label style="color:rgba(0,0,0,0.26)">Touillette ?</label>
+            <md-switch ng-model="touillette" aria-label="Touillette" class="md-primary"></md-switch>
+        </div>
+
+        <!--En vacances ?-->
+        <div layout="row" layout-align="space-between center">
+            <label style="color:rgba(0,0,0,0.26)">En vacances ?</label>
+            <md-switch ng-model="vacances" aria-label="Vacances" class="md-primary"></md-switch>
+        </div>
+
+        <md-content layout="row" layout-align="center">
+            <md-button class="md-primary" ng-click="submit()">
+                Valider
+            </md-button>
+        </md-content>
+    </form>
+</div>
+

@@ -1,0 +1,26 @@
+<md-list style="padding: 2% 5%;">
+    <md-subheader class="md-no-sticky">
+        <div layout="row" layout-align="space-between center">
+            <div>Qui paye aujourd'hui ?</div>
+            <div>{{Data.date | date}}</div>
+        </div>
+    </md-subheader>
+    <md-list-item>
+        <md-radio-group ng-model="selected">
+            <md-radio-button ng-disabled="person.vacances" ng-repeat="person in people | orderBy : ['-vacances', 'joursDepuisDernierCafe'] : true"
+                             value="{{person.prenom}}" ng-model="person.payeAjd"
+                             class="md-primary" ng-click="presents(person)">
+                <!--<img alt="{{ person.prenom }}" src="img/account-circle.svg" class="md-avatar"/>-->
+                <md-icon md-svg-icon="img/account-circle.svg"></md-icon>
+                <span>{{ person.prenom }}
+                    (<ng-pluralize
+                            count="person.joursDepuisDernierCafe"
+                            when="{'0': '0 jour',
+                         'one': '1 jour',
+                         'other': '{} jours'}">
+                    </ng-pluralize>)
+                </span>
+            </md-radio-button>
+        </md-radio-group>
+    </md-list-item>
+</md-list>

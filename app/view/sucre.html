@@ -1,0 +1,20 @@
+<div layout="column" layout-align="space-around center">
+    <br/>
+    <div>Il y'a {{qteCafe}} cafés à commander.</div>
+    <br/>
+    <div>
+        <ng-pluralize count="qteSucre"
+                      when="{'0': 'Il ne faut aucun sucre et ',
+                         'one': 'Il faut prendre 1 sucre et ',
+                         'other': 'Il faut prendre {} sucres et '}">
+        </ng-pluralize>
+        <ng-pluralize count="qteTouillette"
+                      when="{'0': ' personne ne prend de touillette.',
+                         'one': ' 1 touillette.',
+                         'other': ' {} touillettes.'}">
+        </ng-pluralize>
+    </div>
+    <br/>
+    <div>Merci {{data.payeur.prenom}} !</div>
+    <!--(<span ng-repeat="person in people | filter : {sucre : true} | filter : {present : true}">{{person.prenom}}, </span>)-->
+</div>
