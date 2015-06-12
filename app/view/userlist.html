@@ -1,10 +1,11 @@
 <md-content>
     <md-list>
         <md-subheader class="md-no-sticky">Choisir une personne a modifier</md-subheader>
-        <md-list-item ng-repeat="person in people" style="text-align: left;">
+        <md-list-item ng-repeat="person in people | orderBy : ['vacances', 'cachee']"
+                      style="text-align: left;">
             <md-button style="width: 100%; text-align: left;" ng-click="editUser(person.id)">
-                <md-icon md-svg-icon="img/account-circle.svg" ></md-icon>
-                <span>{{person.prenom }}</span>
+                <img alt="{{ person.prenom }}" ng-src="{{person.img}}" class="md-avatar"/>
+                <span class="avatar-name">{{person.prenom }} <span style="text-transform: lowercase;">{{person.text}}</span></span>
             </md-button>
         </md-list-item>
     </md-list>

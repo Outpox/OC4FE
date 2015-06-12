@@ -15,38 +15,54 @@ angular.module('oc4fe', ['ngMaterial', 'ngRoute'])
             {
                 id: 1,
                 prenom: 'Guillaume',
-                img: 'guillaume.png',
+                img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAIAAAAAJGNjYjA0MzNkLTllYjEtNDU1OC04YTA2LTA4NjEzNDIxOWUwYw.jpg',
                 dernierCafe: new Date(),
                 joursDepuisDernierCafe: 0,
                 payeAjd: false,
                 present: false,
                 sucre: true,
                 touillette: true,
-                vacances: true
+                vacances: true,
+                cachee: false
             },
             {
                 id: 2,
                 prenom: 'Dahyun',
-                img: 'dahyun.png',
+                img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/005/08a/100/0427ba0.jpg',
                 dernierCafe: date1,
                 joursDepuisDernierCafe: 0,
                 payeAjd: false,
                 present: false,
                 sucre: true,
                 touillette: true,
-                vacances: false
+                vacances: false,
+                cachee: false
             },
             {
                 id: 3,
                 prenom: 'Gerôme',
-                img: 'gerome.png',
+                img: 'img/account-circle.svg',
                 dernierCafe: date2,
                 joursDepuisDernierCafe: 0,
                 payeAjd: false,
                 present: false,
                 sucre: true,
                 touillette: true,
-                vacances: false
+                vacances: false,
+                cachee: false
+            },
+            {
+                id: 4,
+                prenom: 'Eric',
+                img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/000/0da/227/3dcd144.jpg',
+                dernierCafe: new Date(),
+                joursDepuisDernierCafe: 0,
+                payeAjd: false,
+                present: false,
+                sucre: true,
+                touillette: true,
+                vacances: false,
+                cachee: false
             }
         ]
     })
@@ -106,6 +122,7 @@ angular.module('oc4fe', ['ngMaterial', 'ngRoute'])
 
         for (var p in $scope.people) {
             $scope.people[p].joursDepuisDernierCafe = dateDiff($scope.people[p].dernierCafe, new Date());
+
         }
     }])
     .controller('presentsCtrl', ['$scope', '$location', 'People', 'Data', function ($scope, $location, People, Data) {
@@ -136,14 +153,15 @@ angular.module('oc4fe', ['ngMaterial', 'ngRoute'])
         $scope.submit = function () {
             person.id = $scope.people.length + 1;
             person.prenom = $scope.prenom;
-            person.img = '';
+            person.img = $scope.img || 'img/account-circle.svg';
             person.dernierCafe = new Date();
             person.joursDepuisDernierCafe = 0;
             person.payeAjd = false;
             person.present = false;
             person.sucre = $scope.sucre;
             person.touillette = $scope.touillette;
-            person.vacances = $scope.vacances;
+            person.vacances = false;
+            person.cachee = false;
             $scope.people.push(person);
             $location.path('/');
         }
@@ -151,6 +169,23 @@ angular.module('oc4fe', ['ngMaterial', 'ngRoute'])
     .controller('userListCtrl', ['$scope', 'People', 'Data', '$location', function ($scope, People, Data, $location) {
         $scope.people = People;
         $scope.data = Data;
+
+        for (var p in $scope.people) {
+            $scope.people[p].text = '';
+            if ($scope.people[p].cachee && $scope.people[p].vacances) {
+                $scope.people[p].text = '(caché, en vacances)';
+                break;
+            }
+            if ($scope.people[p].cachee) {
+                $scope.people[p].text = '(caché)';
+                break;
+            }
+            if ($scope.people[p].vacances) {
+                $scope.people[p].text = '(en vacances)';
+                break;
+            }
+        }
+
         $scope.editUser = function (id) {
             $location.path('edituser/' + id);
         }
@@ -170,11 +205,15 @@ angular.module('oc4fe', ['ngMaterial', 'ngRoute'])
         $scope.sucre = $scope.people[index].sucre;
         $scope.touillette = $scope.people[index].touillette;
         $scope.vacances = $scope.people[index].vacances;
+        $scope.cachee = $scope.people[index].cachee;
+        $scope.img = $scope.people[index].img;
         $scope.submit = function () {
             $scope.people[index].prenom = $scope.prenom;
             $scope.people[index].sucre = $scope.sucre;
             $scope.people[index].touillette = $scope.touillette;
             $scope.people[index].vacances = $scope.vacances;
+            $scope.people[index].cachee = $scope.cachee;
+            $scope.people[index].img = $scope.img || 'img/account-circle.svg';
             $location.path('/');
         }
     }])

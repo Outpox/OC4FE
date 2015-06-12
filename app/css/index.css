@@ -4,18 +4,46 @@
     padding-right: 10px;
     margin-top: -10px;
     height: 24px;
-    vertical-align: middle; }
+    vertical-align: middle;
+}
+
 .bottomSheetdemoBasicUsage .md-grid-item-content {
-    height: 96px; }
+    height: 96px;
+}
+
 .bottomSheetdemoBasicUsage .md-grid-item-content md-icon {
     height: 48px;
-    width: 48px; }
+    width: 48px;
+}
+
 .bottomSheetdemoBasicUsage .md-grid-text {
-    padding-bottom: 5px; }
-md-radio-group[disabled] span, md-radio-button[disabled] span{
+    padding-bottom: 5px;
+}
+
+md-radio-group[disabled] span, md-radio-button[disabled] span {
     text-decoration: line-through;
 }
-md-checkbox[disabled] + p{
+
+md-radio-group[disabled] img, md-radio-button[disabled] img {
+    opacity: 0.5;
+}
+
+md-checkbox[disabled] + p span {
     text-decoration: line-through;
-    color:rgba(0,0,0,0.26);
+    color: rgba(0, 0, 0, 0.26);
+}
+
+md-checkbox[disabled] + p img {
+    opacity: 0.5;
+}
+
+.md-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.avatar-name {
+    position: relative;
+    top: -13px;
 }

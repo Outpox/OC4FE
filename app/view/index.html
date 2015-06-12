@@ -7,12 +7,14 @@
     </md-subheader>
     <md-list-item>
         <md-radio-group ng-model="selected">
-            <md-radio-button ng-disabled="person.vacances" ng-repeat="person in people | orderBy : ['-vacances', 'joursDepuisDernierCafe'] : true"
+            <md-radio-button ng-disabled="person.vacances"
+                             ng-repeat="person in people | orderBy : ['-vacances', 'joursDepuisDernierCafe'] : true"
                              value="{{person.prenom}}" ng-model="person.payeAjd"
-                             class="md-primary" ng-click="presents(person)">
-                <!--<img alt="{{ person.prenom }}" src="img/account-circle.svg" class="md-avatar"/>-->
-                <md-icon md-svg-icon="img/account-circle.svg"></md-icon>
-                <span>{{ person.prenom }}
+                             class="md-primary" ng-click="presents(person)"
+                             ng-hide="person.cachee">
+                <img alt="{{ person.prenom }}" ng-src="{{person.img}}" class="md-avatar"/>
+                <!--<md-icon md-svg-icon="img/account-circle.svg"></md-icon>-->
+                <span class="avatar-name">{{ person.prenom }}
                     (<ng-pluralize
                             count="person.joursDepuisDernierCafe"
                             when="{'0': '0 jour',

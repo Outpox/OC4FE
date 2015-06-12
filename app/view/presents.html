@@ -1,20 +1,18 @@
-<md-list  style="padding: 2% 5%;">
+<md-list style="padding: 2% 5%;">
     <md-subheader class="md-no-sticky">
         <div layout="row" layout-align="space-between center">
             <div>{{data.payeur.prenom}} paye pour :</div>
             <div>{{data.date | date}}</div>
         </div>
     </md-subheader>
-    <md-list-item ng-repeat="person in people | orderBy : 'vacances'">
+    <md-list-item ng-repeat="person in people | orderBy : 'vacances'" ng-hide="person.cachee">
         <md-checkbox ng-disabled="person.vacances" ng-model="person.present" class="md-primary"></md-checkbox>
-        <p>
-            <md-icon md-svg-icon="img/account-circle.svg" style="padding-right: 3px;"></md-icon><!--
-            -->{{person.prenom}}
-        </p>
+        <p><!--
+            --><img alt="{{ person.prenom }}" ng-src="{{person.img}}" class="md-avatar"/>
+            <span class="avatar-name">{{person.prenom}}</span><!--
+        --></p>
     </md-list-item>
 </md-list>
-
-<!--<img alt="{{ person.prenom }}" src="img/account-circle.svg" class="md-avatar"/>-->
 
 <md-content layout="row" layout-align="center">
     <md-button class="md-primary" ng-click="goToSucre()">

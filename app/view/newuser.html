@@ -3,8 +3,14 @@
         <br/>
         <!--Prenom-->
         <md-input-container flex>
-            <label>Prenom</label>
+            <label>Prénom</label>
             <input ng-model="prenom">
+        </md-input-container>
+
+        <!--Image de profile-->
+        <md-input-container flex>
+            <label>URL de l'image</label>
+            <input ng-model="img">
         </md-input-container>
 
         <!--Sucre ou pas ?-->
@@ -17,12 +23,6 @@
         <div layout="row" layout-align="space-between center">
             <label style="color:rgba(0,0,0,0.26)">Touillette ?</label>
             <md-switch ng-model="touillette" aria-label="Touillette" class="md-primary"></md-switch>
-        </div>
-
-        <!--En vacances ?-->
-        <div layout="row" layout-align="space-between center">
-            <label style="color:rgba(0,0,0,0.26)">En vacances ?</label>
-            <md-switch ng-model="vacances" aria-label="Vacances" class="md-primary"></md-switch>
         </div>
 
         <md-content layout="row" layout-align="center">
