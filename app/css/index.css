@@ -47,3 +47,7 @@ md-checkbox[disabled] + p img {
     position: relative;
     top: -13px;
 }
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}

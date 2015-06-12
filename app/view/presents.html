@@ -5,6 +5,9 @@
             <div>{{data.date | date}}</div>
         </div>
     </md-subheader>
+    <md-list-item layout="row" layout-align="center center">
+        <md-button class="md-primary" ng-click="selectAll()">Tout le monde</md-button>
+    </md-list-item>
     <md-list-item ng-repeat="person in people | orderBy : 'vacances'" ng-hide="person.cachee">
         <md-checkbox ng-disabled="person.vacances" ng-model="person.present" class="md-primary"></md-checkbox>
         <p><!--

@@ -5,7 +5,7 @@
             <div>{{Data.date | date}}</div>
         </div>
     </md-subheader>
-    <md-list-item>
+    <md-list-item layout="row" layout-align="center center">
         <md-radio-group ng-model="selected">
             <md-radio-button ng-disabled="person.vacances"
                              ng-repeat="person in people | orderBy : ['-vacances', 'joursDepuisDernierCafe'] : true"
