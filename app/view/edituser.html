@@ -37,6 +37,16 @@
             <md-switch ng-model="cachee" aria-label="Cachee" class="md-primary"></md-switch>
         </div>
 
+        <md-input-container flex>
+            <label>Cafés payés</label>
+            <input ng-model="cafePayes" required type="number">
+        </md-input-container>
+
+        <md-input-container flex>
+            <label>Cafés reçus</label>
+            <input ng-model="cafeRecus" required type="number">
+        </md-input-container>
+
         <md-content layout="row" layout-align="center">
             <md-button class="md-primary">
                 Valider

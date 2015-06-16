@@ -17,8 +17,8 @@
                 <span class="avatar-name">{{ person.prenom }}
                     (<ng-pluralize
                             count="person.joursDepuisDernierCafe"
-                            when="{'0': '0 jour',
-                         'one': '1 jour',
+                            when="{'0': 'aujourd\'hui',
+                         'one': 'hier',
                          'other': '{} jours'}">
                     </ng-pluralize>)
                 </span>

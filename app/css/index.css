@@ -43,6 +43,11 @@ md-checkbox[disabled] + p img {
     border-radius: 50%;
 }
 
+.md-avatar.big {
+    width: 80px;
+    height: 80px;
+}
+
 .avatar-name {
     position: relative;
     top: -13px;
@@ -50,4 +55,7 @@ md-checkbox[disabled] + p img {
 .hidden {
     display: none !important;
     visibility: hidden !important;
+}
+.userinfo md-content {
+    margin: 2% 0;
 }

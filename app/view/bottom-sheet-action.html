@@ -1,6 +1,12 @@
 <md-bottom-sheet class="md-grid">
     <md-list>
         <md-list-item>
+            <md-button class="md-list-item-content" ng-click="userInfo()">
+                <md-icon md-svg-src="img/information-outline.svg"></md-icon>
+                <div class="md-grid-text">Info sur une<br/>personne</div>
+            </md-button>
+        </md-list-item>
+        <md-list-item>
             <md-button class="md-list-item-content" ng-click="addNewUser()">
                 <md-icon md-svg-src="img/account-plus.svg"></md-icon>
                 <div class="md-grid-text">Nouvelle<br/>personne</div>
@@ -12,5 +18,6 @@
                 <div class="md-grid-text">Modifier une<br/>personne</div>
             </md-button>
         </md-list-item>
+
     </md-list>
 </md-bottom-sheet>

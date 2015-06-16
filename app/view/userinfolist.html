@@ -1,0 +1,13 @@
+<md-content>
+    <md-list>
+        <md-subheader class="md-no-sticky">Informations sur :</md-subheader>
+        <md-list-item ng-repeat="person in people | orderBy : ['vacances', 'cachee', 'prenom']"
+                      style="text-align: left;">
+            <md-button style="width: 100%; text-align: left;" ng-click="userInfo(person.id)">
+                <img alt="{{ person.prenom }}" ng-src="{{person.img}}" class="md-avatar"/>
+                <span class="avatar-name" style="text-transform: capitalize;">{{person.prenom }} <span
+                        style="font-size: 0.8rem;">({{person.cafePayes}}p | {{person.cafeRecus}}r)</span></span>
+            </md-button>
+        </md-list-item>
+    </md-list>
+</md-content>

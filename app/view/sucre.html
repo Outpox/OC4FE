@@ -1,14 +1,14 @@
 <div layout="column" layout-align="space-around center">
     <br/>
-    <div>Il y'a {{qteCafe}} cafés à commander.</div>
+    <div>Il y'a {{data.nbCafe}} cafés à commander.</div>
     <br/>
     <div>
-        <ng-pluralize count="qteSucre"
+        <ng-pluralize count="data.qteSucre"
                       when="{'0': 'Il ne faut aucun sucre et ',
                          'one': 'Il faut prendre 1 sucre et ',
                          'other': 'Il faut prendre {} sucres et '}">
         </ng-pluralize>
-        <ng-pluralize count="qteTouillette"
+        <ng-pluralize count="data.qteTouillette"
                       when="{'0': ' personne ne prend de touillette.',
                          'one': ' 1 touillette.',
                          'other': ' {} touillettes.'}">
