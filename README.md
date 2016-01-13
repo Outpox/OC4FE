@@ -1,6 +1,7 @@
 # OC4FE
 
 ### Installation
+* Install : https://github.com/Outpox/OC4FE-API
 * Clone the repo `git clone https://github.com/Outpox/OC4FE.git`
 * If you don't have bower `npm install bower`
 * `bower install`
